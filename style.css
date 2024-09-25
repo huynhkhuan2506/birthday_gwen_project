@@ -1,0 +1,146 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f3f4f6;
+    font-family: "Roboto Mono", monospace;
+    font-weight: bold;
+    overflow: hidden;
+}
+
+.container {
+    position: relative;
+    text-align: center;
+    max-width: 100vw;
+}
+
+.gift img {
+    width: 100%;
+    cursor: pointer;
+    max-width: 400px; 
+    max-height: 400px;
+}
+
+.card {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 80vw;
+    max-width: 900px;
+    background-color: transparent;
+    box-shadow: none;
+    border-radius: 10px;
+    overflow: hidden;
+    animation: showCard 1s forwards;
+}
+
+.card-img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.message {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: red;
+    width: 90%;
+    text-transform: uppercase;
+}
+
+.message p {
+    font-size: 3vw;
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.avatar {
+    width: 50vw;
+    max-width: 300px;
+    border-radius: 50%;
+    margin-top: 10px;
+}
+
+@keyframes showCard {
+    0% {
+        opacity: 0;
+        transform: translate(-50%, -60%);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
+}
+
+
+/* Thiết lập cho màn hình lớn hơn, như laptop và PC */
+@media (min-width: 1024px) {
+    .message p {
+        font-size: 1.5rem;
+    }
+    .avatar {
+        width: 15rem;
+    }
+}
+
+/* Thiết lập cho máy tính bảng */
+@media (max-width: 1023px) {
+    .gift img {
+        max-width: 250px;
+        max-height: 250px;
+    }
+    .card {
+        width: 70vw;
+    }
+    .message p {
+        font-size: 2vw;
+    }
+
+    .avatar {
+        width: 20vw;
+    }
+}
+
+/* Thiết lập cho điện thoại di động */
+@media (max-width: 767px) {
+    .gift img {
+        max-width: 100%;
+        max-height: 100%;
+    }
+    .card {
+        width: 100vw;
+    }
+    .message p {
+        font-size: 3vw;
+    }
+    .avatar {
+        width: 25vw;
+    }
+}
+
+.balloon {
+    position: absolute;
+    bottom: 0;
+    width: 20px;
+    height: 30px;
+    background-color: #FF69B4;
+    border-radius: 50%;
+    opacity: 0.7;
+    animation: floatUp 8s linear infinite;
+}
+
+@keyframes floatUp {
+    from { transform: translateY(100%); }
+    to { transform: translateY(-100%); }
+}
